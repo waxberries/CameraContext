@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="page-body">
+	<view class="page-body-wrapper">
+		<!-- <camera device-position="front" flash="off" binderror="error" class="camera" bindstop='bindstop'
+			binderror='binderror'>
+			<cover-view class='border_writh'></cover-view>
+		</camera> -->
+		<camera flash="off" device-position="{{device?'back':'front'}}" class="camera" bindstop='bindstop' binderror='binderror'>
+			<cover-view class='border_writh'></cover-view>
+		</camera>
+		<view class="btn-area">
+			<!-- <button type="primary" bindtap="stoptime">停止</button> -->
+			<button class="btn-p" type="primary" bindtap="firstPhoto">拍照</button>
+			<button class="btn-s" type="primary" bindtap="switchPhoto">切换摄像头</button>
+		</view>
+		<view class="preview-tips">预览</view>
+		<image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
+	</view>
+</view>
